@@ -9,3 +9,16 @@ function! neoformat#formatters#terraform#terraform() abort
         \ 'stdin': 1
         \ }
 endfunction
+
+function! neoformat#formatters#tf#enabled() abort
+   return ['terraform']
+endfunction
+
+function! neoformat#formatters#tf#terraform() abort
+    return {
+        \ 'exe': 'terraform',
+        \ 'args': ['fmt', '-write', '-'],
+        \ 'stdin': 1
+        \ }
+endfunction
+
